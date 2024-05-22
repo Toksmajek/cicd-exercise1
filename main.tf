@@ -2,6 +2,14 @@
 provider "aws" {
   region = "us-east-1"
 }
+
+terraform {
+    backend "s3" {
+      bucket = "labexercise1"
+      region = "us-east-1"
+    }
+  }
+  
 #Create a custom VPC
 resource "aws_vpc" "myvpc" {
   cidr_block = "10.0.0.0/16"
